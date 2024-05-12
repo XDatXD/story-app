@@ -1,21 +1,13 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button"
-import { Menu } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
 import Navbar from "@/components/Navbar";
-
+import { Separator } from "@/components/ui/separator";
+import ListStory from "@/components/ListStory"
 
 export default function Home() {
   return (
     <div>
       <Navbar/>
+      <Separator/>
+      <ListStory/>
     </div>
   );
 }
