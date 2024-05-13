@@ -5,7 +5,6 @@ import Image from 'next/image';
 import {
     Card,
     CardContent,
-    CardDescription,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -20,7 +19,7 @@ interface StoryCardProps {
 const StyledCard = styled(Card)`
   position: relative;
   transition: transform 0.3s ease-in-out;
-
+    cursor: pointer;
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -40,7 +39,6 @@ const StoryCard: React.FC<StoryCardProps> = ({ title, imageUrl, isFull }) => {
             </CardHeader>
             <CardContent>
                 <CardTitle>{title}</CardTitle>
-                <CardDescription>Đọc truyện ngay</CardDescription>
             </CardContent>
         </StyledCard>
     );

@@ -41,7 +41,7 @@ const StoryDetail = () => {
             tình cảm bị mất hay nổi qua ho.
           </p>
           <p className="mb-4">
-            Cô và "Thế giới" phải tiếm môi quan hệ đầy lằng man, và cả hai không thể hoàn khỏi sức hút của
+            Cô và Thế giới phải tiếm môi quan hệ đầy lằng man, và cả hai không thể hoàn khỏi sức hút của
             tình yêu. Liệu cuộc tình của ho sẽ đâu khiến ho đến đâu? Mời bạn đọc theo dõi câu chuyện thú vị này
             sẽ được tiết lộ đến cùng đó, con có những truyện cùng lắc giả cùng, và cùng hay và hiệp đấn mà bản
             dung nên bố lộ như Boss Là Nữ Phụ hay Thực Hiện Nguyễn Vọng Nữ Phụ.
