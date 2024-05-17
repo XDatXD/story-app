@@ -5,12 +5,24 @@ import Logo, { LogoMobile } from "@/components/Logo";
 import { ThemeSwitcherBtn } from "@/components/ThemeSwitcherBtn";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Separator } from "./ui/separator";
+import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Menu, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 const items = [
   {
@@ -90,7 +102,7 @@ function MobileNavbar() {
             <div className="flex flex-col gap-1 pt-4">
               {items.map((item) =>
                 item.subItems ? (
-                  <AccordionItem key={item.label} item={item} />
+                  <AccordionItemComponent key={item.label} item={item} />
                 ) : (
                   <NavbarItem key={item.label} link={item.link!} label={item.label} />
                 )
@@ -119,7 +131,7 @@ function DesktopNavbar() {
           <div className="flex h-full items-center space-x-6">
             {items.map((item) =>
               item.subItems ? (
-                <DropdownItem key={item.label} item={item} />
+                <DropdownMenuItemComponent key={item.label} item={item} />
               ) : (
                 <NavbarItem key={item.label} link={item.link!} label={item.label} />
               )
@@ -169,43 +181,34 @@ function NavbarItem({ link, label, clickCallback, hasSubItems }: NavbarItemProps
   );
 }
 
-type DropdownItemProps = {
+type DropdownMenuItemProps = {
   item: {
     label: string;
     subItems: { label: string; link: string }[];
   };
 };
 
-function DropdownItem({ item }: DropdownItemProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
+function DropdownMenuItemComponent({ item }: DropdownMenuItemProps) {
   return (
-    <div className="group relative">
-      <Button
-        className=
-          "flex items-center space-x-2 text-lg text-muted-foreground hover:text-foreground"
-        onClick={() => setIsExpanded(!isExpanded)}
-        variant="outline"
-      >
-        <span>{item.label}</span>
-      </Button>
-      <div
-        className={cn(
-          "absolute left-0 top-full z-10 hidden w-56 flex-col rounded-md bg-background shadow-md group-hover:flex",
-          isExpanded && "flex"
-        )}
-      >
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          className="flex items-center space-x-2 text-lg text-muted-foreground hover:text-foreground"
+          variant="outline"
+        >
+          <span>{item.label}</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
         {item.subItems.map((subItem) => (
-          <Link
-            key={subItem.label}
-            href={subItem.link}
-            className="px-4 py-2 text-muted-foreground hover:bg-muted hover:text-foreground"
-          >
-            {subItem.label}
-          </Link>
+          <DropdownMenuItem key={subItem.label} asChild>
+            <Link href={subItem.link} className="px-4 py-2 text-muted-foreground hover:bg-muted hover:text-foreground">
+              {subItem.label}
+            </Link>
+          </DropdownMenuItem>
         ))}
-      </div>
-    </div>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
 
@@ -216,32 +219,25 @@ type AccordionItemProps = {
   };
 };
 
-function AccordionItem({ item }: AccordionItemProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
+function AccordionItemComponent({ item }: AccordionItemProps) {
   return (
-    <div>
-      <button
-        className="flex w-full justify-between py-2 text-left text-lg text-muted-foreground hover:text-foreground"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {item.label}
-        <ChevronDown className={cn("transition-transform", { "rotate-180": isOpen })} />
-      </button>
-      {isOpen && (
-        <div className="pl-4">
+    <Accordion type="single" collapsible>
+      <AccordionItem value={item.label}>
+        <AccordionTrigger>
+          {item.label}
+        </AccordionTrigger>
+        <AccordionContent>
           {item.subItems.map((subItem) => (
-            <Link
+            <NavbarItem
               key={subItem.label}
-              href={subItem.link}
-              className="block py-2 text-muted-foreground hover:text-foreground"
-            >
-              {subItem.label}
-            </Link>
+              link={subItem.link}
+              label={subItem.label}
+              clickCallback={() => {}}
+            />
           ))}
-        </div>
-      )}
-    </div>
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
   );
 }
 

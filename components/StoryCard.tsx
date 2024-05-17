@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from 'react';
 import Image from 'next/image';
@@ -7,8 +7,7 @@ import {
     CardContent,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card"
-import styled from 'styled-components';
+} from "@/components/ui/card";
 
 interface StoryCardProps {
     title: string;
@@ -16,19 +15,9 @@ interface StoryCardProps {
     isFull: boolean;
 }
 
-const StyledCard = styled(Card)`
-  position: relative;
-  transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-`;
-
 const StoryCard: React.FC<StoryCardProps> = ({ title, imageUrl, isFull }) => {
     return (
-        <StyledCard>
+        <Card className="relative transition-transform duration-300 ease-in-out cursor-pointer hover:transform hover:translate-y-[-5px] hover:shadow-lg">
             <CardHeader>
                 <Image src={imageUrl} alt={title} width={400} height={225} className="object-cover rounded-t-lg" />
                 {isFull && (
@@ -40,7 +29,7 @@ const StoryCard: React.FC<StoryCardProps> = ({ title, imageUrl, isFull }) => {
             <CardContent>
                 <CardTitle>{title}</CardTitle>
             </CardContent>
-        </StyledCard>
+        </Card>
     );
 };
 
