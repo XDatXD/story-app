@@ -20,10 +20,10 @@ const listItems = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 py-4 mt-8">
+    <footer className="bg-gray-100 dark:bg-[#333333] py-4 mt-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-          <div className="w-full md:w-2/5 text-left">
+          <div className="w-full md:w-2/5 text-left sm:text-center md:text-left">
             <p className="text-gray-600 dark:text-gray-300">
               &copy; {new Date().getFullYear()} Group19. All rights reserved.
             </p>
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               Trang web này dành cho các truyện yêu thích của bạn. Liên hệ: contact@group19.com
             </p>
           </div>
-          <div className="w-full md:w-3/5 mt-4 md:mt-0 flex flex-wrap justify-center gap-2">
+          <div className="w-full md:w-3/5 mt-4 md:mt-0 flex flex-wrap justify-center gap-2 sm:hidden md:flex">
             {listItems.map((item) => (
               <Button
                 key={item.label}

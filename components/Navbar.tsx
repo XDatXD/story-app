@@ -38,29 +38,27 @@ const items = [
       { label: "Ngôn Tình Ngược", link: "/list/ngon-tinh-nguoc" },
       { label: "Ngôn Tình Sủng", link: "/list/ngon-tinh-sung" },
       { label: "Ngôn Tình Hài", link: "/list/ngon-tinh-hai" },
-      { label: "Đam Mỹ Hài", link: "/list/dam-my-hai" },
-      { label: "Đam Mỹ Hay", link: "/list/dam-my-hay" },
-      { label: "Đam Mỹ H Văn", link: "/list/dam-my-h-van" },
-      { label: "Đam Mỹ Sắc", link: "/list/dam-my-sac" },
     ],
   },
   {
     label: "Thể loại",
     subItems: [
-      { label: "Truyện mới cập nhật", link: "/category/new" },
-      { label: "Truyện Hot", link: "/category/hot" },
-      { label: "Truyện Full", link: "/category/full" },
-      { label: "Tiên Hiệp Hay", link: "/category/tien-hiep-hay" },
-      { label: "Kiếm Hiệp Hay", link: "/category/kiem-hiep-hay" },
-      { label: "Truyện Teen Hay", link: "/category/teen-hay" },
-      { label: "Ngôn Tình Hay", link: "/category/ngon-tinh-hay" },
-      { label: "Ngôn Tình Ngược", link: "/category/ngon-tinh-nguoc" },
-      { label: "Ngôn Tình Sủng", link: "/category/ngon-tinh-sung" },
-      { label: "Ngôn Tình Hài", link: "/category/ngon-tinh-hai" },
-      { label: "Đam Mỹ Hài", link: "/category/dam-my-hai" },
-      { label: "Đam Mỹ Hay", link: "/category/dam-my-hay" },
-      { label: "Đam Mỹ H Văn", link: "/category/dam-my-h-van" },
-      { label: "Đam Mỹ Sắc", link: "/category/dam-my-sac" },
+      { label: "Kiếm Hiệp", link: "/category/kiem-hiep" },
+      { label: "Ngôn Tình", link: "/category/ngon-tinh" },
+      { label: "Dị Giới", link: "/category/di-gioi" },
+      { label: "Dị Năng", link: "/category/di-nang" },
+      { label: "Quân Sự", link: "/category/quan-su" },
+      { label: "Lịch Sử", link: "/category/lich-su" },
+      { label: "Xuyên Không", link: "/category/xuyen-khong" },
+      { label: "Trinh Thám", link: "/category/trinh-tham" },
+      { label: "Thám Hiểm", link: "/category/tham-hiem" },
+      { label: "Đông Phương", link: "/category/dong-phuong" },
+      { label: "Hài Hước", link: "/category/hai-huoc" },
+      { label: "Cổ Đại", link: "/category/co-dai" },
+      { label: "Truyện Teen", link: "/category/truyen-teen" },
+      { label: "Phương Tây", link: "/category/phuong-tay" },
+      { label: "Light Novel", link: "/category/light-novel" },
+      { label: "Việt Nam", link: "/category/viet-nam" },
     ],
   },
   {
@@ -232,7 +230,7 @@ function AccordionItemComponent({ item }: AccordionItemProps) {
               key={subItem.label}
               link={subItem.link}
               label={subItem.label}
-              clickCallback={() => {}}
+              clickCallback={() => { }}
             />
           ))}
         </AccordionContent>
