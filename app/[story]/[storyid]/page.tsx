@@ -9,7 +9,7 @@ import {
     SelectContent,
     SelectItem,
 } from '@/components/ui/select';
-import SettingsDialog from '../[slug]/component/SettingsDialog';
+import SettingsDialog from '../story/[slug]/component/SettingsDialog';
 
 const chapters: { [key: string]: string } = {
     "1": "Hẻm nhỏ Ma Cô thuộc Đông thành mặc dù nằm trong một khu vực hỗn tạp, nhưng lại là nơi tam giáo cửu lưu đều có phần kính sợ. Nơi đó là nơi ở của một vị tiên cô nổi tiếng gần xa, nghe nói có thể thông quỷ thần, ngay cả các hộ nhà cao cửa rộng gặp phải chuyện khó giải quyết đều sẽ lặng lẽ mời đến làm phép. Một thiếu niên mặt mày thanh tú tò mò đánh giá mọi thứ quanh mình. Phòng ốc thấp bé cũ nát, góc tường chất đầy đồ lộn xộn, trên mặt đất chảy đầy nước bẩn, còn có khi thỉnh thoảng truyền đến tiếng trẻ con khóc rống vui cười, tất cả mọi thứ đều khiến thiếu niên cảm thấy mới lạ. Phần mới lạ này được che dấu dưới sự cẩn thận. Những tên nhàn tản ngồi dưới chân tường buồn bực ngán ngẩm hướng tầm mắt nhìn về phía thiếu niên, khiến hắn không thể không trở nên cẩn thận. Đây là nơi hắn chưa tới bao giờ, càng là phong cảnh hắn chưa từng thấy qua. Thế nhưng khi đi đến một ngã ba, thiếu niên vẫn phải dừng bước chân. Một người trẻ tuổi tóc cắt ngắn, dưới ánh mắt tràn ngập địch ý của những người quanh mình, chặn đường thiếu niên lại. “Ca ca, tới đây chơi đùa một chút được không?” Thiếu niên giương mắt nhìn người trẻ tuổi, chắp tay nói: “ Vị ca ca này, tại hạ có việc gấp cần phải đi làm, không thể ở lại chơi đùa với ca ca.”",
@@ -24,15 +24,12 @@ const StoryRead: React.FC = () => {
     const [backgroundColor, setBackgroundColor] = useState<string>(''); // Default background color
     const [fontSize, setFontSize] = useState<number>(16); // Default font size
     const [fontFamily, setFontFamily] = useState<string>('Arial'); // Default font family
-    const [textColor, setTextColor] = useState<string>(''); // Default text color
     const [currentChapter, setCurrentChapter] = useState<string>("1"); // Current chapter
+    const [lineHeight, setLineHeight] = useState<number>(1.5); // Default line height
+    const [textAlign, setTextAlign] = useState<string>('left'); // Default text alignment
 
     const handleBackgroundColorChange = (color: string) => {
         setBackgroundColor(color);
-    };
-
-    const handleTextColorChange = (color: string) => {
-        setTextColor(color);
     };
 
     const handleFontSizeChange = (size: number) => {
@@ -57,6 +54,14 @@ const StoryRead: React.FC = () => {
         setCurrentChapter(nextChapter);
     };
 
+    const handleLineHeightChange = (height: number) => {
+        setLineHeight(height);
+    };
+
+    const handleTextAlignChange = (align: string) => {
+        setTextAlign(align);
+    };
+
     const isFirstChapter = currentChapter === "1";
     const isLastChapter = currentChapter === Object.keys(chapters).length.toString();
 
@@ -64,9 +69,10 @@ const StoryRead: React.FC = () => {
         <div className={`container mx-auto py-8 px-4 dark:text-white`}>
             <SettingsDialog
                 onChangeBackgroundColor={handleBackgroundColorChange}
-                onChangeTextColor={handleTextColorChange}
                 onChangeFontSize={handleFontSizeChange}
                 onChangeFontFamily={handleFontFamilyChange}
+                onChangeLineHeight={handleLineHeightChange}
+                onChangeTextAlign={handleTextAlignChange}
             />
             <div className="flex justify-between items-end mb-6">
                 <Button variant="default" onClick={handlePreviousChapter} disabled={isFirstChapter}>
@@ -94,7 +100,7 @@ const StoryRead: React.FC = () => {
                     <ChevronRight size={24} />
                 </Button>
             </div>
-            <div className={`p-6 rounded-lg shadow-md ${backgroundColor}`} style={{ fontSize: `${fontSize}px`, fontFamily: fontFamily, color: `${textColor}` }}>
+            <div className={`p-6 rounded-lg shadow-md ${backgroundColor}`} style={{ fontSize: `${fontSize}px`, fontFamily: fontFamily, lineHeight: `${lineHeight}`, textAlign: `${textAlign}` }}>
                 <p className={`text-gray-800 dark:text-gray-200`}>
                     {chapters[currentChapter]}
                 </p>

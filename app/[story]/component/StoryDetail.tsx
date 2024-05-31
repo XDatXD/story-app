@@ -103,7 +103,10 @@ const StoryDetail = () => {
         </ul>
         <Pagination className="mt-8">
           <PaginationContent>
-            <PaginationPrevious onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
+            <PaginationPrevious
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            />
             {Array.from({ length: totalPages }, (_, index) => (
               <PaginationItem key={index}>
                 <PaginationLink
@@ -114,7 +117,10 @@ const StoryDetail = () => {
                 </PaginationLink>
               </PaginationItem>
             ))}
-            <PaginationNext onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} />
+            <PaginationNext
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            />
           </PaginationContent>
         </Pagination>
       </div>
