@@ -97,7 +97,7 @@ function MobileNavbar() {
             <Logo />
             <Separator />
             <SearchBar />
-            <div className="flex flex-col gap-1 pt-4">
+            <div className="flex flex-col mt-4 gap-1 pt-4 max-h-[90vh] overflow-y-auto"> {/* Add max height and enable scrolling */}
               {items.map((item) =>
                 item.subItems ? (
                   <AccordionItemComponent key={item.label} item={item} />

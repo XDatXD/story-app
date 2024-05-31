@@ -15,6 +15,7 @@ import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/u
 import { Slider } from "@/components/ui/slider"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input";
+import useMedia from 'use-media';
 
 interface SettingsDialogProps {
     onChangeBackgroundColor: (color: string) => void;
@@ -140,12 +141,15 @@ const SettingsDialog: React.FC<SettingsDialogProps> = ({ onChangeBackgroundColor
         onChangeTextAlign(align);
     };
 
+    const isDesktop = useMedia({ minWidth: 650 });
+
     return (
         <div>
-            <Button className="fixed top-1/2 left-4 z-10 bg-black text-white hover:bg-[#333333] p-2 shadow-md" variant="default" onClick={() => setIsDialogOpen(true)}>
-                <Settings className="w-6 h-6 mr-1" />
-                Tùy chỉnh
+            <Button className="fixed sm:top-1/5 md:top-1/2 left-4 z-10 bg-black text-white hover:bg-[#333333] p-2 shadow-md flex items-center" variant="default" onClick={() => setIsDialogOpen(true)}>
+                <Settings className="w-6 h-6" />
+                <p className="hidden sm:block ml-1">Tùy chỉnh</p>
             </Button>
+
             {/* Dialog */}
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger />
@@ -170,7 +174,7 @@ const SettingsDialog: React.FC<SettingsDialogProps> = ({ onChangeBackgroundColor
                                     <Button className={`bg-yellow-400 hover:bg-yellow-500 ${activeBgColor === 'bg-yellow-500' ? 'ring-2 ring-blue-500' : ''}`} onClick={() => handleBackgroundColorChange('bg-yellow-500')}>Yellow</Button>
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <h3 className="mb-2">Chỉnh cỡ chữ:</h3>
                                 <Slider

@@ -22,7 +22,7 @@ function SearchBar() {
   if (!isMounted) return null;
 
   return (
-    <form onSubmit={handleSearch} className="flex items-center gap-2 sm:mt-5 lg:mt-0">
+    <form onSubmit={handleSearch} className="flex items-center gap-2 sm:mt-4 lg:mt-0">
       <Input
         type="text"
         value={query}
