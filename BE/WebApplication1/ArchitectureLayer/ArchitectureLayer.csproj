@@ -1,9 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.61" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0-preview.4.24266.19" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DomainLayer\DomainLayer.csproj" />
+  </ItemGroup>
 
 </Project>
