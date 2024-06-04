@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace DomainLayer.Entities
 {
-	public class Genre
+	public class Author
 	{
-		public string id { get; set; }
-		public string name { get; set; }
-		public string href { get; set; }
+		public string name {  get; set; }
+		public string href {  get; set; }
 	}
 }

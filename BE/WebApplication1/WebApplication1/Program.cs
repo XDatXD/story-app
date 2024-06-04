@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 //add dich vu repositories
 builder.Services.AddSingleton<IGetAllRepositories, GetAllRepositories>();
 builder.Services.AddSingleton<IGetGenreRepositories, GetGenreRepositories>();
+builder.Services.AddSingleton<IGetInformationNovelRepositories, GetInformationNovelRepositories>();
 
 var app = builder.Build();
 

@@ -9,6 +9,6 @@ namespace DomainLayer.Interfaces
 {
 	public interface IGetAllService
 	{
-		Novel GetAll(string http);
+		Task<List<Novel>> GetAll(string http);
 	}
 }
