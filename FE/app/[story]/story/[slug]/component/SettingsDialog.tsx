@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Settings, ChevronDown, ChevronUp, AlignCenter, AlignLeft, AlignRight, AlignJustify } from 'lucide-react';
 import {
     Dialog,
@@ -27,18 +27,38 @@ interface SettingsDialogProps {
 
 const SettingsDialog: React.FC<SettingsDialogProps> = ({ onChangeBackgroundColor, onChangeFontSize, onChangeFontFamily, onChangeLineHeight, onChangeTextAlign }) => {
     const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
-    const [fontSize, setFontSize] = useState<number>(16); // Default font size
-    const [fontFamily, setFontFamily] = useState<string>('Arial'); // Default font family
-    const [tempFontSize, setTempFontSize] = useState<number | string>(16); // Temporary font size for input
-    const [lineHeight, setLineHeight] = useState<number>(1.5); // Default line height
-    const [tempLineHeight, setTempLineHeight] = useState<number | string>(1.5); // Temporary line height for input
-    const [textAlign, setTextAlign] = useState<string>('left'); // Default text alignment
-    const [activeBgColor, setActiveBgColor] = useState<string>('bg-white'); // Default background color
+    const [fontSize, setFontSize] = useState<number>(() => parseInt(localStorage.getItem('fontSize') || '16')); // Default font size
+    const [fontFamily, setFontFamily] = useState<string>(() => localStorage.getItem('fontFamily') || 'Arial'); // Default font family
+    const [tempFontSize, setTempFontSize] = useState<number | string>(fontSize); // Temporary font size for input
+    const [lineHeight, setLineHeight] = useState<number>(() => parseFloat(localStorage.getItem('lineHeight') || '1.5')); // Default line height
+    const [tempLineHeight, setTempLineHeight] = useState<number | string>(lineHeight); // Temporary line height for input
+    const [textAlign, setTextAlign] = useState<string>(() => localStorage.getItem('textAlign') || 'left'); // Default text alignment
+    const [activeBgColor, setActiveBgColor] = useState<string>(() => localStorage.getItem('backgroundColor') || 'bg-white'); // Default background color
 
     const MIN_FONT_SIZE = 10;
     const MAX_FONT_SIZE = 50;
     const MIN_LINE_HEIGHT = 0.5;
     const MAX_LINE_HEIGHT = 4;
+
+    useEffect(() => {
+        localStorage.setItem('fontSize', fontSize.toString());
+    }, [fontSize]);
+
+    useEffect(() => {
+        localStorage.setItem('fontFamily', fontFamily);
+    }, [fontFamily]);
+
+    useEffect(() => {
+        localStorage.setItem('lineHeight', lineHeight.toString());
+    }, [lineHeight]);
+
+    useEffect(() => {
+        localStorage.setItem('textAlign', textAlign);
+    }, [textAlign]);
+
+    useEffect(() => {
+        localStorage.setItem('backgroundColor', activeBgColor);
+    }, [activeBgColor]);
 
     const handleBackgroundColorChange = (color: string) => {
         setActiveBgColor(color);
@@ -253,6 +273,9 @@ const SettingsDialog: React.FC<SettingsDialogProps> = ({ onChangeBackgroundColor
                             </div>
                         </div>
                     </DialogDescription>
+                    <DialogClose asChild>
+                        <Button variant="default">Close</Button>
+                    </DialogClose>
                 </DialogContent>
             </Dialog>
         </div>
