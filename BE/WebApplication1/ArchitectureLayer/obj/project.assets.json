@@ -246,6 +246,9 @@
       "DomainLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.61"
+        },
         "compile": {
           "bin/placeholder/DomainLayer.dll": {}
         },

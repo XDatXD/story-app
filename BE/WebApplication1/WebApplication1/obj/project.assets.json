@@ -354,7 +354,9 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "ArchitectureLayer": "1.0.0",
-          "DomainLayer": "1.0.0"
+          "DomainLayer": "1.0.0",
+          "HtmlAgilityPack": "1.11.61",
+          "Microsoft.Extensions.Http": "9.0.0-preview.4.24266.19"
         },
         "compile": {
           "bin/placeholder/ApplicationLayer.dll": {}
@@ -381,6 +383,9 @@
       "DomainLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.61"
+        },
         "compile": {
           "bin/placeholder/DomainLayer.dll": {}
         },

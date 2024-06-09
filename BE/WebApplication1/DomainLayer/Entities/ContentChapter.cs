@@ -8,7 +8,6 @@ namespace DomainLayer.Entities
 {
 	public class ContentChapter
 	{
-		public int numberChapter { set; get; }
 		public string content {  set; get; }
 		public string href { set; get; }
 		public string title { set; get; }

@@ -138,6 +138,9 @@
       "System.Memory/4.5.5": {},
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "DomainLayer/1.0.0": {
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.61"
+        },
         "runtime": {
           "DomainLayer.dll": {}
         }

@@ -1,4 +1,5 @@
 ﻿using DomainLayer.Entities;
+using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace DomainLayer.Interfaces
 {
 	public interface IGetGenreRepositories
 	{
-		Task<List<Genre>> GetGenreAsync(string http);
+		Task<List<string>> GetGenreAsync(string href);
+		Task<List<Genre>> GetDetailGenre(string href);
 	}
 }

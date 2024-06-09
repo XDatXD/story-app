@@ -261,6 +261,9 @@
       "DomainLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.61"
+        },
         "compile": {
           "bin/placeholder/DomainLayer.dll": {}
         },
@@ -820,7 +823,9 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "ArchitectureLayer >= 1.0.0",
-      "DomainLayer >= 1.0.0"
+      "DomainLayer >= 1.0.0",
+      "HtmlAgilityPack >= 1.11.61",
+      "Microsoft.Extensions.Http >= 9.0.0-preview.4.24266.19"
     ]
   },
   "packageFolders": {
@@ -868,6 +873,16 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
+        "dependencies": {
+          "HtmlAgilityPack": {
+            "target": "Package",
+            "version": "[1.11.61, )"
+          },
+          "Microsoft.Extensions.Http": {
+            "target": "Package",
+            "version": "[9.0.0-preview.4.24266.19, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
