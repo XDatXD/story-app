@@ -25,21 +25,21 @@ import {
 } from "@/components/ui/accordion";
 
 const items = [
-  {
-    label: "Danh sách",
-    subItems: [
-      { label: "Truyện mới cập nhật", link: "/list/new" },
-      { label: "Truyện Hot", link: "/list/hot" },
-      { label: "Truyện Full", link: "/list/full" },
-      { label: "Tiên Hiệp Hay", link: "/list/tien-hiep-hay" },
-      { label: "Kiếm Hiệp Hay", link: "/list/kiem-hiep-hay" },
-      { label: "Truyện Teen Hay", link: "/list/teen-hay" },
-      { label: "Ngôn Tình Hay", link: "/list/ngon-tinh-hay" },
-      { label: "Ngôn Tình Ngược", link: "/list/ngon-tinh-nguoc" },
-      { label: "Ngôn Tình Sủng", link: "/list/ngon-tinh-sung" },
-      { label: "Ngôn Tình Hài", link: "/list/ngon-tinh-hai" },
-    ],
-  },
+  // {
+  //   label: "Danh sách",
+  //   subItems: [
+  //     { label: "Truyện mới cập nhật", link: "/list/new" },
+  //     { label: "Truyện Hot", link: "/list/hot" },
+  //     { label: "Truyện Full", link: "/list/full" },
+  //     { label: "Tiên Hiệp Hay", link: "/list/tien-hiep-hay" },
+  //     { label: "Kiếm Hiệp Hay", link: "/list/kiem-hiep-hay" },
+  //     { label: "Truyện Teen Hay", link: "/list/teen-hay" },
+  //     { label: "Ngôn Tình Hay", link: "/list/ngon-tinh-hay" },
+  //     { label: "Ngôn Tình Ngược", link: "/list/ngon-tinh-nguoc" },
+  //     { label: "Ngôn Tình Sủng", link: "/list/ngon-tinh-sung" },
+  //     { label: "Ngôn Tình Hài", link: "/list/ngon-tinh-hai" },
+  //   ],
+  // },
   {
     label: "Thể loại",
     subItems: [
