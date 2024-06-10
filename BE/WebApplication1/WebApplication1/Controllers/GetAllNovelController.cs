@@ -16,7 +16,7 @@ namespace PresentationLayer.Controllers
 			getAllRepositories = _getAllRepositories;
 		}
 		[HttpGet]
-		public async Task<IActionResult> GetAsync([FromQuery] string href = "https://truyenfull.vn/")
+		public async Task<IActionResult> GetAsync([FromQuery] string href = "https://truyenfull.vn/ajax.php?type=hot_select&id=1")
 		{
 			Page page = await getAllRepositories.GetAllAsync(href);
 			return Ok(page);
