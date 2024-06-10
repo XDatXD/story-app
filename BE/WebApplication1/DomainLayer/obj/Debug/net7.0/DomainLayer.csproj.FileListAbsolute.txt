@@ -1,0 +1,25 @@
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\bin\Debug\net7.0\DomainLayer.deps.json
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\bin\Debug\net7.0\DomainLayer.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\bin\Debug\net7.0\DomainLayer.pdb
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.AssemblyInfoInputs.cache
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.AssemblyInfo.cs
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.csproj.CoreCompileInputs.cache
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.sourcelink.json
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\refint\DomainLayer.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.pdb
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\ref\DomainLayer.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.csproj.AssemblyReference.cache
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\bin\Debug\net7.0\DomainLayer.deps.json
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\bin\Debug\net7.0\DomainLayer.dll
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\bin\Debug\net7.0\DomainLayer.pdb
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.csproj.AssemblyReference.cache
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.AssemblyInfoInputs.cache
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.AssemblyInfo.cs
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.csproj.CoreCompileInputs.cache
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.dll
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\refint\DomainLayer.dll
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\DomainLayer.pdb
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\DomainLayer\obj\Debug\net7.0\ref\DomainLayer.dll

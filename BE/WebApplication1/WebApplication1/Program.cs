@@ -1,3 +1,5 @@
+﻿
+using ApplicationLayer.InternalService;
 using ArchitectureLayer.Repositories;
 using DomainLayer.Interfaces;
 
@@ -6,8 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddHttpClient(); // Configure HttpClientFactory
-								  // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddHttpClient();// Configure HttpClientFactory
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy("AllowSpecificOrigin",
+		builder => builder
+			.WithOrigins("http://localhost:3000") // Thay thế bằng domain của bạn
+			.AllowAnyHeader()
+			.AllowAnyMethod());
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -15,6 +25,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IGetAllRepositories, GetAllRepositories>();
 builder.Services.AddSingleton<IGetGenreRepositories, GetGenreRepositories>();
 builder.Services.AddSingleton<IGetInformationNovelRepositories, GetInformationNovelRepositories>();
+builder.Services.AddSingleton<IGetContentChapterRepositories, GetContentChapterRepositories>();
+builder.Services.AddSingleton<IReadDomNovelListService, ReadDomNovelListService>();
+builder.Services.AddSingleton<IGetNovelByGenreRepositories, GetNovelByGenreRepositories>();
+builder.Services.AddSingleton<IReadDomGetTotalPageService, ReadDomGetTotalPageService>();
+builder.Services.AddSingleton<IGetNovelBySearchRepositories, GetNovelBySearchRepositories>();
 
 var app = builder.Build();
 
@@ -24,6 +39,7 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+app.UseCors("AllowSpecificOrigin"); // Áp dụng chính sách CORS
 
 app.UseHttpsRedirection();
 

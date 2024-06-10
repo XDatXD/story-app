@@ -19,5 +19,6 @@ namespace DomainLayer.Entities
 		public string rating {  get; set; }
 		public string src {  get; set; }
 		public List<ContentChapter> contentChapterList { get; set; }
+		public List<string> pages { get; set; }
 	}
 }

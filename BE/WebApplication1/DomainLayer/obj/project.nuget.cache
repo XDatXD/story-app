@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "15fF0hzzA64YSxntalitiJjr1Sm2Gmy1UQhBHnUlHOj4XKVmVd1bEFHeqXl7t04B3Hrtt00U0gqRXk+Dc6bKbQ==",
+  "success": true,
+  "projectFilePath": "D:\\Documents\\Năm 3\\HK II\\Thiết kế phần mềm\\Final Project\\story-app\\BE\\WebApplication1\\DomainLayer\\DomainLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\htmlagilitypack\\1.11.61\\htmlagilitypack.1.11.61.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -2,7 +2,7 @@ import { ReadingStatus } from "@/schema/ReadingStatus";
 import Link from "next/link";
 import React from "react";
 
-export const ReadingNovelItem: React.FC<{
+const ReadingNovelItem: React.FC<{
     reading: ReadingStatus;
 }> = ({ reading }) => {
     return (
@@ -18,3 +18,5 @@ export const ReadingNovelItem: React.FC<{
         </li>
     );
 };
+
+export default ReadingNovelItem;

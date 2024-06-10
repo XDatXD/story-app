@@ -1,6 +1,6 @@
 import React from "react";
 import { Separator } from "./ui/separator";
-import { ReadingNovelItem } from "./ReadingNovelItem";
+import ReadingNovelItem from "./ReadingNovelItem";
 import { ReadingStatus } from "@/schema/ReadingStatus";
 
 const readings: ReadingStatus[] = [
@@ -27,7 +27,7 @@ const readings: ReadingStatus[] = [
     },
 ];
 
-export const ReadingNovel: React.FC = () => {
+const ReadingNovel: React.FC = () => {
     return (
         <div className="bg-gray-100 dark:bg-[#333333] border border-1 mt-6 lg:mt-0 mb-6 p-4">
             <h2 className="text-xl font-semibold mb-4 uppercase w-fit">
@@ -42,3 +42,5 @@ export const ReadingNovel: React.FC = () => {
         </div>
     );
 };
+
+export default ReadingNovel;

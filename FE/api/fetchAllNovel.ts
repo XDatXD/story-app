@@ -1,10 +1,10 @@
 import { Novel } from "@/schema/Novel";
 
 interface GetAllNovelResponse {
-    data: Novel[];
-    page: number;
-    total_pages: number;
-    per_page: number
+    novels: Novel[];
+    // page: number;
+    // total_pages: number;
+    // per_page: number
 }
 
 export const fetchAllNovel = async () => {

@@ -9,6 +9,6 @@ namespace DomainLayer.Interfaces
 {
 	public interface IGetAllRepositories
 	{
-		Task<List<Novel>> GetAllAsync(string http);
+		Task<Page> GetAllAsync(string http);
 	}
 }

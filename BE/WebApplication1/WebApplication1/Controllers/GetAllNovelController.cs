@@ -16,44 +16,10 @@ namespace PresentationLayer.Controllers
 			getAllRepositories = _getAllRepositories;
 		}
 		[HttpGet]
-		public async Task<IActionResult> GetAsync()
+		public async Task<IActionResult> GetAsync([FromQuery] string href = "https://truyenfull.vn/")
 		{
-			string http = "https://truyenfull.vn/";
-			List<Novel> novels = await getAllRepositories.GetAllAsync(http);
-			return Ok(novels);
+			Page page = await getAllRepositories.GetAllAsync(href);
+			return Ok(page);
 		}
-
-		[HttpPost]
-		public IActionResult Post()
-		{
-			return Ok(new SinhVien());
-		}
-		[HttpDelete]
-		public IActionResult Delete()
-		{
-			return Ok(new SinhVien());
-		}
-		[HttpPut]
-		public IActionResult Update(SinhVien v)
-		{
-			return Ok(v);
-		}
-	}
-
-	public class SinhVien
-	{
-		public int Id { get; set; }
-		public string Name { get; set; }
-		public SinhVien()
-		{
-			Id = 1;
-			Name = "dang tuan anh";
-		}
-	}
-
-	public class LinkInfo
-	{
-		public string Url { get; set; }
-		public string Text { get; set; }
 	}
 }

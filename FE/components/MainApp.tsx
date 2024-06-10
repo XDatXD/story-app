@@ -1,10 +1,10 @@
 import React from "react";
 import { Separator } from "./ui/separator";
-import ListStory from "./ListStory";
-import { ReadingNovel } from "./ReadingNovel";
-import { GenreList } from "./GenreList";
+import ListStory from "./NovelList";
+import ReadingNovel from "./ReadingNovel";
+import GenreList from "./GenreList";
 
-export const MainApp: React.FC = () => {
+const MainApp: React.FC = () => {
     return (
         <div className="container mx-auto px-16 py-8">
             <h2 className="text-xl font-semibold mb-4 uppercase w-fit">
@@ -23,3 +23,5 @@ export const MainApp: React.FC = () => {
         </div>
     );
 };
+
+export default MainApp;

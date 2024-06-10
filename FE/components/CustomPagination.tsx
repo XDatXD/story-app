@@ -8,7 +8,7 @@ import {
     PaginationPrevious,
 } from "@/components/ui/pagination";
 
-export const CustomPagination: React.FC<{
+const CustomPagination: React.FC<{
     currentPage: number;
     totalPages: number;
     onChangePage: (page: number) => void;
@@ -53,3 +53,5 @@ export const CustomPagination: React.FC<{
         </Pagination>
     );
 };
+
+export default CustomPagination;
