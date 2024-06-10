@@ -9,8 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();// Configure HttpClientFactory
-								  // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-								  // ??ng ký AngleSharp
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy("AllowSpecificOrigin",
+		builder => builder
+			.WithOrigins("http://localhost:3000/") // Thay thế bằng domain của bạn
+			.AllowAnyHeader()
+			.AllowAnyMethod());
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -33,6 +39,7 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+app.UseCors("AllowSpecificOrigin"); // Áp dụng chính sách CORS
 
 app.UseHttpsRedirection();
 
