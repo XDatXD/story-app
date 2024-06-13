@@ -14,11 +14,14 @@ namespace ArchitectureLayer.Repositories
 	{
 		private readonly IHttpClientFactory httpClientFactory;
 		private readonly IReadDomGetTotalPageService readDomGetTotalPageService;
+		private readonly IReadDomGetListChapterService readDomGetListChapterService;
 		public GetInformationNovelRepositories(IHttpClientFactory _httpClientFactory, 
-			IReadDomGetTotalPageService _readDomGetTotalPageService)
+			IReadDomGetTotalPageService _readDomGetTotalPageService,
+			IReadDomGetListChapterService _readDomGetListChapterService)
 		{
 			httpClientFactory = _httpClientFactory;	
 			readDomGetTotalPageService = _readDomGetTotalPageService;
+			readDomGetListChapterService = _readDomGetListChapterService;
 		}
 		public async Task<Novel> GetDetail(string href)
 		{
@@ -97,41 +100,12 @@ namespace ArchitectureLayer.Repositories
 					src = src,
 					status = status,
 					image = image,
-					contentChapterList = await getListChapter(href),
+					contentChapterList = await readDomGetListChapterService.ReadDomGetListChapterAsync(href),
 					pages = listString.ToList(),
 				};
 				return targetNovel;
 			}
 			return new Novel();
-		}
-
-		public async Task<List<ContentChapter>> getListChapter(string hrefBase)
-		{
-			List<ContentChapter> chapters = new List<ContentChapter>();
-			var request = new HttpRequestMessage(HttpMethod.Get, hrefBase);
-			var client = httpClientFactory.CreateClient();
-			var response = await client.SendAsync(request);
-			if (response.IsSuccessStatusCode)
-			{
-				var html = await response.Content.ReadAsStringAsync();
-				var htmlDocument = new HtmlDocument();
-				htmlDocument.LoadHtml(html);
-				//get title novel
-				var ul = htmlDocument.DocumentNode.SelectNodes("//ul[@class='list-chapter']");
-				foreach( var ulNode in ul)
-				{
-					var listChapter = ulNode.SelectNodes(".//a");
-					foreach (var item in listChapter)
-					{
-						chapters.Add(new ContentChapter()
-						{
-							href = item.GetAttributeValue("href", string.Empty),
-							title = item.GetAttributeValue("title", string.Empty),
-						});
-					}
-				}
-			}
-			return chapters;
 		}
 	}
 }

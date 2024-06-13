@@ -30,6 +30,8 @@ builder.Services.AddSingleton<IReadDomNovelListService, ReadDomNovelListService>
 builder.Services.AddSingleton<IGetNovelByGenreRepositories, GetNovelByGenreRepositories>();
 builder.Services.AddSingleton<IReadDomGetTotalPageService, ReadDomGetTotalPageService>();
 builder.Services.AddSingleton<IGetNovelBySearchRepositories, GetNovelBySearchRepositories>();
+builder.Services.AddSingleton<IReadDomGetListChapterService, ReadDomGetListChapterService>();
+builder.Services.AddSingleton<IGetNumberChapterOfNovelRepositories, GetNumberChapterOfNovelRepositories>();
 
 var app = builder.Build();
 
