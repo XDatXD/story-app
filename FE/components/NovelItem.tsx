@@ -6,11 +6,10 @@ import { Novel as NovelProps } from "@/schema/Novel";
 import { formattedPathName } from "@/utils/formattedPathName";
 
 const StoryCard: React.FC<{ novel: NovelProps }> = ({ novel }) => {
-    console.log(novel);
     const formattedNovel = formattedPathName(novel.title);
 
     return (
-        <Card className="relative transition-transform duration-300 ease-in-out cursor-pointer hover:transform hover:translate-y-[-5px] hover:shadow-lg">
+        <Card className="justify-self-center relative transition-transform duration-300 ease-in-out cursor-pointer hover:transform hover:translate-y-[-5px] hover:shadow-lg w-[100%] h-[100%] lg:w-[129px] lg:h-[192px] overflow-hidden">
             <CardHeader className="p-0">
                 <Link
                     href={{
@@ -21,10 +20,10 @@ const StoryCard: React.FC<{ novel: NovelProps }> = ({ novel }) => {
                     <Image
                         src={novel.image}
                         alt={novel.title}
-                        property="true"
                         width={129}
                         height={192}
-                        className="object-cover rounded-t-lg w-[100%] h-[100%] lg:w-[129px] lg:h-[192px] overflow-hidden"
+                        priority={true}
+                        className="object-cover rounded-t-lg w-[100%] h-[100%]"
                     />
                 </Link>
             </CardHeader>

@@ -1,26 +1,58 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import NovelItem from "./NovelItem";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { fetchAllNovel } from "@/api/fetchAllNovel";
 import { useToast } from "./ui/use-toast";
 import CustomPagination from "./CustomPagination";
-
-const ITEMS_PER_PAGE = 18;
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import NovelListSkeleton from "./NovelListSkeleton";
 
 const NovelList: React.FC = () => {
-    const { isPending, isError, data, error } = useQuery({
-        queryKey: ["novels"],
-        queryFn: fetchAllNovel,
-    });
     const { toast } = useToast();
-    const [currentPage, setCurrentPage] = useState(1);
+    const router = useRouter();
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const page = Number(searchParams?.get("page")) || 1;
+    const pageHref = useMemo(() => {
+        return `https://truyenfull.vn/ajax.php?type=hot_select&id=${page}`;
+    }, [page]);
+    const { isPending, isError, data, error, isSuccess } = useQuery({
+        queryKey: ["novels", pageHref],
+        queryFn: () => fetchAllNovel(pageHref),
+        // placeholderData: keepPreviousData,
+    });
+    const [totalPage, setTotalPage] = useState(1);
+    const createQueryString = useCallback(
+        (name: string, value: string) => {
+            const params = new URLSearchParams(searchParams?.toString());
+            params.set(name, value);
+
+            return params.toString();
+        },
+        [searchParams]
+    );
 
     const handlePageChange = (page: number) => {
-        setCurrentPage(page);
+        router.push(
+            pathname + "?" + createQueryString("page", page.toString())
+        );
     };
 
+    useEffect(() => {
+        if (page === 1 && pathname) {
+            router.push(pathname);
+        }
+    }, [page, pathname, router]);
+    useEffect(() => {
+        if (isSuccess) {
+            const { listPage } = data;
+            if (listPage?.length && listPage.length > 0) {
+                setTotalPage(listPage.length);
+            }
+        }
+    }, [isSuccess, data]);
     useEffect(() => {
         if (isError) {
             toast({
@@ -30,17 +62,19 @@ const NovelList: React.FC = () => {
         }
     }, [isError, error, toast]);
 
-    return (
+    return isPending ? (
+        <NovelListSkeleton />
+    ) : (
         <div>
-            <div className="grid grid-cols-4 lg:grid-cols-6 gap-4 mb-6">
+            <div className="grid grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-4 mb-8">
                 {data?.novels?.map((novel, index) => (
                     <NovelItem key={index} novel={novel} />
                 ))}
             </div>
             <CustomPagination
-                currentPage={currentPage}
+                currentPage={page}
                 onChangePage={handlePageChange}
-                totalPages={5}
+                totalPages={totalPage}
             />
         </div>
     );
