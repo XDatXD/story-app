@@ -24,9 +24,9 @@ namespace ArchitectureLayer.Repositories
 		public async Task<Page> GetAllAsync(string href)
 		{
 			List<string> listString = new List<string>();
-			if(href == "https://truyenfull.vn/")
+			if(href == "https://truyenfull.vn/ajax.php?type=hot_select&id=1")
 			{
-				listString = await _genreRepositories.GetGenreAsync(href);
+				listString = await _genreRepositories.GetGenreAsync("https://truyenfull.vn/");
 			}
 			var request = new HttpRequestMessage(HttpMethod.Get, href);
 			var client = _clientFactory.CreateClient();
@@ -44,7 +44,7 @@ namespace ArchitectureLayer.Repositories
 					foreach (var anchorNode in anchorNodes)
 					{
 						string hrefNovel = anchorNode.GetAttributeValue("href", string.Empty);
-						var image = anchorNode.SelectSingleNode("//img");
+						var image = anchorNode.SelectSingleNode(".//img");
 						string title = image.GetAttributeValue("alt", string.Empty);
 						string src = image.GetAttributeValue("src", string.Empty);
 						listNovel.Add(new Novel()

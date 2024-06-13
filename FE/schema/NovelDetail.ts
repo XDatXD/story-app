@@ -11,4 +11,5 @@ export interface NovelDetail extends Novel {
     rating: string;
     src: string;
     contentChapterList: ContentChapter[];
+    pages: string[];
 }
