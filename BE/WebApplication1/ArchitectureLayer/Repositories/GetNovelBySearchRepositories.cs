@@ -22,31 +22,109 @@ namespace ArchitectureLayer.Repositories
 			_readDomNovelListService = readDomNovelListService;
 			_readDomGetTotalPageService = readDomGetTotalPageService;
 		}
-		public async Task<Page> GetNovelBySearch(string href)
+		public async Task<List<Novel>> GetNovelBySearch(string genre, string author, string title)
 		{
-			var request = new HttpRequestMessage(HttpMethod.Get, href);
-			var client = _httpClientFactory.CreateClient();
-			var response = await client.SendAsync(request);
-			string templateString = "https://truyenfull.vn/tim-kiem/?tukhoa=anh";
-			List<Novel> novels = new List<Novel>();
-			List<string> listString = new List<string>();
-			if (response.IsSuccessStatusCode)
+			List<Novel> result = new List<Novel>();
+			if (!string.IsNullOrEmpty(genre))
 			{
-				var html = await response.Content.ReadAsStringAsync();
-				var htmlDocument = new HtmlDocument();
-				htmlDocument.LoadHtml(html);
-				novels = await _readDomNovelListService.ReadDomNovelListVersion1(htmlDocument);
-				//check href
-				if(href.Split('&').Length == templateString.Split('&').Length)
+				var request = new HttpRequestMessage(HttpMethod.Get, genre);
+				var client = _httpClientFactory.CreateClient();
+				var response = await client.SendAsync(request);
+				if (response.IsSuccessStatusCode)
 				{
-					listString = _readDomGetTotalPageService.GetTotalPageVersion1(htmlDocument, href);
+					var html = await response.Content.ReadAsStringAsync();
+					var htmlDocument = new HtmlDocument();
+					htmlDocument.LoadHtml(html);
+					List<string> listPage = _readDomGetTotalPageService.GetTotalPageVersion1(htmlDocument, genre);
+					foreach (var page in listPage)
+					{
+						var request1 = new HttpRequestMessage(HttpMethod.Get, page);
+						var client1 = _httpClientFactory.CreateClient();
+						var response1 = await client1.SendAsync(request1);
+						if (response1.IsSuccessStatusCode)
+						{
+							var html1 = await response.Content.ReadAsStringAsync();
+							var htmlDocument1 = new HtmlDocument();
+							htmlDocument1.LoadHtml(html1);
+							result.AddRange(await _readDomNovelListService.ReadDomNovelListVersion1(htmlDocument1));
+						}
+					}
 				}
+				List<Novel> filter = new List<Novel>();
+				foreach (var item in result)
+				{
+					if (item.author.name.Contains(author) || item.title.Contains(title))
+					{
+						filter.Add(item);
+					}
+				}
+				return filter;
 			}
-			return new Page()
+			else if (!string.IsNullOrEmpty(author))
 			{
-				Novels = novels,
-				listPage = listString
-			};
+				string template = "https://truyenfull.vn/tim-kiem/?tukhoa=" + author;
+				var request = new HttpRequestMessage(HttpMethod.Get, genre);
+				var client = _httpClientFactory.CreateClient();
+				var response = await client.SendAsync(request);
+				if (response.IsSuccessStatusCode)
+				{
+					var html = await response.Content.ReadAsStringAsync();
+					var htmlDocument = new HtmlDocument();
+					htmlDocument.LoadHtml(html);
+					List<string> listPage = _readDomGetTotalPageService.GetTotalPageVersion1(htmlDocument, template);
+					foreach (var page in listPage)
+					{
+						var request1 = new HttpRequestMessage(HttpMethod.Get, page);
+						var client1 = _httpClientFactory.CreateClient();
+						var response1 = await client1.SendAsync(request1);
+						if (response1.IsSuccessStatusCode)
+						{
+							var html1 = await response.Content.ReadAsStringAsync();
+							var htmlDocument1 = new HtmlDocument();
+							htmlDocument1.LoadHtml(html1);
+							result.AddRange(await _readDomNovelListService.ReadDomNovelListVersion1(htmlDocument1));
+						}
+					}
+				}
+				List<Novel> filter = new List<Novel>();
+				foreach(var item in result)
+				{
+					if(item.title.Contains(title))
+					{
+						filter.Add(item);
+					}
+				}
+				return filter;
+			}
+			else if(!string.IsNullOrEmpty(title))
+			{
+				string template = "https://truyenfull.vn/tim-kiem/?tukhoa=" + title;
+				var request = new HttpRequestMessage(HttpMethod.Get, genre);
+				var client = _httpClientFactory.CreateClient();
+				var response = await client.SendAsync(request);
+				if (response.IsSuccessStatusCode)
+				{
+					var html = await response.Content.ReadAsStringAsync();
+					var htmlDocument = new HtmlDocument();
+					htmlDocument.LoadHtml(html);
+					List<string> listPage = _readDomGetTotalPageService.GetTotalPageVersion1(htmlDocument, template);
+					foreach (var page in listPage)
+					{
+						var request1 = new HttpRequestMessage(HttpMethod.Get, page);
+						var client1 = _httpClientFactory.CreateClient();
+						var response1 = await client1.SendAsync(request1);
+						if (response1.IsSuccessStatusCode)
+						{
+							var html1 = await response.Content.ReadAsStringAsync();
+							var htmlDocument1 = new HtmlDocument();
+							htmlDocument1.LoadHtml(html1);
+							result.AddRange(await _readDomNovelListService.ReadDomNovelListVersion1(htmlDocument1));
+						}
+					}
+				}
+				return result;
+			}
+			return result;
 		}
 	}
 }

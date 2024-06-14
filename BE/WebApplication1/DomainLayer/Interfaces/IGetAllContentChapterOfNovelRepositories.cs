@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DomainLayer.Interfaces
 {
-	public interface IGetNovelBySearchRepositories
+	public interface IGetAllContentChapterOfNovelRepositories
 	{
-		Task<List<Novel>> GetNovelBySearch(string genre, string author, string title);
+		Task<Novel> GetDetailNovel(string href);
 	}
 }
