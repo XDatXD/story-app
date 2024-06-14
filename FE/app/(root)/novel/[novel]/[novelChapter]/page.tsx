@@ -17,15 +17,22 @@ import { getReadingState, saveReadingState } from "@/utils/readingState";
 import { getCurrentChapterFromHref } from "@/utils/getCurrentChapterFromHref";
 import { nextChapter } from "@/utils/nextChapter";
 import ContentChapterSkeleton from "./components/Skeleton";
+import { getNovelHrefFromChapterHref } from "@/utils/getNovelHrefFromChapterHref";
+import { fetchTotalChapters } from "@/api/fetchTotalChapters";
 
 const StoryRead: React.FC = () => {
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
     const chapterHref = searchParams?.get("href") || "";
-    const [totalChapters, setTotalChapters] = useState(100);
+    const novelHref = getNovelHrefFromChapterHref(chapterHref);
     const currentChapter = getCurrentChapterFromHref(chapterHref);
 
+    const { data: totalChapters } = useQuery({
+        queryKey: ["totalChapters", novelHref],
+        queryFn: () => fetchTotalChapters(novelHref),
+        placeholderData: keepPreviousData,
+    });
     const { data, isPending } = useQuery({
         queryKey: ["chapter", chapterHref],
         queryFn: () => fetchChapterDetail(chapterHref),
@@ -117,11 +124,17 @@ const StoryRead: React.FC = () => {
         const handleKeyDown = (event: KeyboardEvent) => {
             switch (event.key) {
                 case "ArrowLeft":
-                    const urlPrev = nextChapter(chapterHref, currentChapter - 1);
+                    const urlPrev = nextChapter(
+                        chapterHref,
+                        currentChapter - 1
+                    );
                     router.push(pathname + "?" + `href=${urlPrev}`);
                     break;
                 case "ArrowRight":
-                    const urlNext = nextChapter(chapterHref, currentChapter + 1);
+                    const urlNext = nextChapter(
+                        chapterHref,
+                        currentChapter + 1
+                    );
                     router.push(pathname + "?" + `href=${urlNext}`);
                     break;
             }
@@ -202,7 +215,7 @@ const StoryRead: React.FC = () => {
                         <SelectTrigger>Chương {currentChapter}</SelectTrigger>
                         <SelectContent>
                             {Array.from(
-                                { length: totalChapters },
+                                { length: totalChapters || 100 },
                                 (_, i) => i + 1
                             ).map((chapter) => (
                                 <SelectItem
@@ -260,7 +273,7 @@ const StoryRead: React.FC = () => {
                         <SelectTrigger>Chương {currentChapter}</SelectTrigger>
                         <SelectContent>
                             {Array.from(
-                                { length: totalChapters },
+                                { length: totalChapters || 100 },
                                 (_, i) => i + 1
                             ).map((chapter) => (
                                 <SelectItem
