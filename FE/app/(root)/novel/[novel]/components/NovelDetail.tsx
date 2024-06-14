@@ -9,6 +9,7 @@ import Link from "next/link";
 import { formattedChapterTitle } from "@/utils/formattedChapterTitle";
 import { formattedPathName } from "@/utils/formattedPathName";
 import { usePathname } from "next/navigation";
+import ExportDialog from "./ExportDialog";
 
 const NovelDetail: React.FC<{ novel?: NovelDetailProps }> = ({ novel }) => {
     const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
@@ -18,6 +19,11 @@ const NovelDetail: React.FC<{ novel?: NovelDetailProps }> = ({ novel }) => {
         ? parser.parseFromString(novel.briefDescription, "text/html").body
               .innerHTML
         : "";
+    const firstChapterHref = `/novel/${
+        pathname?.split("/novel/")[1]
+    }/${formattedPathName(
+        formattedChapterTitle(novel?.contentChapterList?.[0].title!)
+    )}`;
 
     return (
         <div className="container mx-auto py-8 px-4 dark:text-white mb-6">
@@ -85,21 +91,21 @@ const NovelDetail: React.FC<{ novel?: NovelDetailProps }> = ({ novel }) => {
                             {isDescriptionExpanded ? "Thu gọn" : "Xem thêm"}
                         </button>
                     </div>
-                    <div className="mt-4 flex justify-start gap-2">
+                    <div className="mt-4 flex justify-between items-center gap-2">
                         <Button variant="default">
                             <Link
                                 href={{
-                                    pathname: `/novel/${pathname?.split("/novel/")[1]}/${formattedPathName(
-                                        formattedChapterTitle(
-                                            novel?.contentChapterList?.[0].title!
-                                        )
-                                    )}`,
-                                    query: { href: novel?.contentChapterList?.[0].href },
+                                    pathname: firstChapterHref,
+                                    query: {
+                                        href: novel?.contentChapterList?.[0]
+                                            .href,
+                                    },
                                 }}
                             >
                                 Đọc từ đầu
                             </Link>
                         </Button>
+                        <ExportDialog novelHref={novel?.href} />
                     </div>
                 </div>
             </div>

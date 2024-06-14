@@ -13,6 +13,7 @@ import { fetchAllGenre } from "@/api/fetchAllGenre";
 import DropdownGenreList from "./DropdownGenreList";
 import AccordionGenreList from "./AccordionGenreList";
 import { Genre } from "@/schema/Genre";
+import DialogSetting from "./DialogSetting";
 
 function Navbar() {
     const { data } = useQuery({
@@ -20,7 +21,7 @@ function Navbar() {
         queryFn: fetchAllGenre,
         placeholderData: keepPreviousData,
     });
-    
+
     return (
         <>
             <DesktopNavbar items={data} />
@@ -48,10 +49,11 @@ function MobileNavbar({ items }: { items?: Genre[] }) {
                         <Logo />
                         <Separator />
                         <SearchBar />
-                        <div className="flex flex-col mt-4 gap-1 pt-4 max-h-[90vh] overflow-y-auto">
+                        <div className="flex flex-col my-4 gap-1 pt-4 max-h-[90vh] overflow-y-auto">
                             {" "}
                             <AccordionGenreList items={items} />
                         </div>
+                        <DialogSetting />
                     </SheetContent>
                 </Sheet>
                 <div className="flex h-[80px] min-h-[60px] items-center gap-x-4">
@@ -74,6 +76,7 @@ function DesktopNavbar({ items }: { items?: Genre[] }) {
                     <div className="flex h-full items-center space-x-6">
                         <DropdownGenreList items={items} />
                     </div>
+                    <DialogSetting />
                 </div>
                 <div className="flex items-center gap-2">
                     <SearchBar />

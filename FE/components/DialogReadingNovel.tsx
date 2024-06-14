@@ -33,12 +33,6 @@ const DialogReadingNovel: React.FC<{ readingStates: ReadingState[] }> = ({
                         {readingStates.map((reading, index) => (
                             <ReadingNovelItem key={index} reading={reading} />
                         ))}
-                        {readingStates.map((reading, index) => (
-                            <ReadingNovelItem key={index} reading={reading} />
-                        ))}
-                        {readingStates.map((reading, index) => (
-                            <ReadingNovelItem key={index} reading={reading} />
-                        ))}
                     </ul>
                 </div>
                 <DialogFooter></DialogFooter>
