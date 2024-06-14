@@ -101,7 +101,7 @@ namespace ArchitectureLayer.Repositories
 					status = status,
 					image = image,
 					contentChapterList = await readDomGetListChapterService.ReadDomGetListChapterAsync(href),
-					pages = listString.ToList(),
+					pages = listString,
 				};
 				return targetNovel;
 			}

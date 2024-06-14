@@ -16,16 +16,11 @@ namespace PresentationLayer.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> Search([FromQuery] string genre, [FromQuery] string author, [FromQuery] string title)
+		public async Task<IActionResult> Search([FromQuery] string genre = "",
+			[FromQuery] string author = "", [FromQuery] string title = "")
 		{
-            if (author == null)
-            {
-				author = "";
-            }
-			if(title == null)
-			{
-				title = "";
-			}
+            author = author.ToLower();
+			title = title.ToLower();
             List<Novel> result = await getNovelBySearchRepositories.GetNovelBySearch(genre, author, title);
 			return Ok(result);
 		}
