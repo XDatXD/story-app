@@ -1,18 +1,17 @@
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ApplicationLayer.deps.json
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ApplicationLayer.dll
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ApplicationLayer.pdb
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ArchitectureLayer.dll
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\DomainLayer.dll
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ArchitectureLayer.pdb
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\DomainLayer.pdb
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.csproj.AssemblyReference.cache
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.GeneratedMSBuildEditorConfig.editorconfig
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.AssemblyInfoInputs.cache
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.AssemblyInfo.cs
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.csproj.CoreCompileInputs.cache
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.sourcelink.json
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.csproj.CopyComplete
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.dll
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\refint\ApplicationLayer.dll
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.pdb
-D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ref\ApplicationLayer.dll
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ApplicationLayer.deps.json
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ApplicationLayer.dll
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ApplicationLayer.pdb
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ArchitectureLayer.dll
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\DomainLayer.dll
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\ArchitectureLayer.pdb
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\DomainLayer.pdb
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.csproj.AssemblyReference.cache
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.AssemblyInfoInputs.cache
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.AssemblyInfo.cs
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.csproj.CoreCompileInputs.cache
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.csproj.CopyComplete
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.dll
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\refint\ApplicationLayer.dll
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.pdb
+D:\Documents\Năm 3\HK II\Thiết kế phần mềm\Final Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ref\ApplicationLayer.dll

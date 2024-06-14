@@ -15,7 +15,7 @@ function SearchBar() {
   const handleSearch = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (query.trim()) {
-      router.push(`/search?query=${encodeURIComponent(query.trim())}`);
+      router.push(`/search?query=${query.trim()}`);
     }
   };
 
