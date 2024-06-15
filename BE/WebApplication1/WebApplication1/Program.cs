@@ -23,12 +23,13 @@ builder.Services.AddSwaggerGen();
 
 //add dich vu repositories
 builder.Services.AddSingleton<IGetAllRepositories, GetAllRepositories>();
+builder.Services.AddSingleton<IGetAllRepositories, GetAllRepositories>();
 builder.Services.AddSingleton<IGetGenreRepositories, GetGenreRepositories>();
 builder.Services.AddSingleton<IGetInformationNovelRepositories, GetInformationNovelRepositories>();
 builder.Services.AddSingleton<IGetContentChapterRepositories, GetContentChapterRepositories>();
 builder.Services.AddSingleton<IReadDomNovelListService, ReadDomNovelListService>();
-builder.Services.AddSingleton<IGetNovelByCriteriaRepositories, GetNovelByGenreRepositories>();
-builder.Services.AddSingleton<IGetNovelByCriteriaRepositories, GetNovelByNumberChapterRepositories>();
+builder.Services.AddSingleton<GetNovelByNumberChapterRepositories>();
+builder.Services.AddSingleton<GetNovelByGenreRepositories>();
 builder.Services.AddSingleton<IReadDomGetTotalPageService, ReadDomGetTotalPageService>();
 builder.Services.AddSingleton<IGetNovelBySearchRepositories, GetNovelBySearchRepositories>();
 builder.Services.AddSingleton<IReadDomGetListChapterService, ReadDomGetListChapterService>();
