@@ -7,6 +7,6 @@ export const fetchAllContentChapter = async (novelHref: string) => {
     if (!res.ok) {
         throw new Error("Fetching error");
     }
-    const data: ChapterDetail[] = await res.json();
-    return data;
+    const { contentChapterList } = await res.json();
+    return contentChapterList as ChapterDetail[];
 };

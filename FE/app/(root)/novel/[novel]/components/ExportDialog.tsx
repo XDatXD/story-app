@@ -45,25 +45,19 @@ const test: ChapterDetail[] = [
         href: "https://truyenfull.vn",
         title: "Test Novel - Chương 4",
         titleNovel: "Test Novel",
-    },
-    {
-        content:
-            "Lorem Ipsum is Lorem Ipsum is aute iri elementum is a Lore mollis",
-        href: "https://truyenfull.vn",
-        title: "Test Novel - Chương 5",
-        titleNovel: "Test Novel",
-    },
+    }
 ];
 
-const formats = getFormats();
-
 const ExportDialog: React.FC<{ novelHref?: string }> = ({ novelHref }) => {
+    const formats = getFormats();
     const [isLoading, setIsLoading] = useState(false);
     const [selectedFormat, setSelectedFormat] = useState<string>(formats[0]);
 
     async function handleExport() {
         setIsLoading(true);
-        const novelChapterDetail = await fetchAllContentChapter(novelHref || "");
+        const novelChapterDetail = await fetchAllContentChapter(
+            novelHref || ""
+        );
         const exporterFactory = new ExporterFactory();
         const exporter: Exporter = exporterFactory.getExporter(selectedFormat);
         // await exporter.export(test);

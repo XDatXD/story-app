@@ -49,7 +49,7 @@ function MobileNavbar({ items }: { items?: Genre[] }) {
                         <Logo />
                         <Separator />
                         <SearchBar />
-                        <div className="flex flex-col my-4 gap-1 pt-4 max-h-[90vh] overflow-y-auto">
+                        <div className="flex flex-col my-4 gap-1 max-h-[90vh] overflow-y-auto">
                             {" "}
                             <AccordionGenreList items={items} />
                         </div>
