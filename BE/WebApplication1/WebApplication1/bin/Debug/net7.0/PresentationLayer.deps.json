@@ -184,6 +184,19 @@
           }
         }
       },
+      "NUnit/4.1.0": {
+        "runtime": {
+          "lib/net6.0/nunit.framework.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.1.0"
+          },
+          "lib/net6.0/nunit.framework.legacy.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.1.0"
+          }
+        }
+      },
+      "NUnit3TestAdapter/4.5.0": {},
       "Swashbuckle.AspNetCore/6.5.0": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
@@ -244,7 +257,9 @@
           "ArchitectureLayer": "1.0.0",
           "DomainLayer": "1.0.0",
           "HtmlAgilityPack": "1.11.61",
-          "Microsoft.Extensions.Http": "9.0.0-preview.4.24266.19"
+          "Microsoft.Extensions.Http": "9.0.0-preview.4.24266.19",
+          "NUnit": "4.1.0",
+          "NUnit3TestAdapter": "4.5.0"
         },
         "runtime": {
           "ApplicationLayer.dll": {}
@@ -254,7 +269,9 @@
         "dependencies": {
           "DomainLayer": "1.0.0",
           "HtmlAgilityPack": "1.11.61",
-          "Microsoft.Extensions.Http": "9.0.0-preview.4.24266.19"
+          "Microsoft.Extensions.Http": "9.0.0-preview.4.24266.19",
+          "NUnit": "4.1.0",
+          "NUnit3TestAdapter": "4.5.0"
         },
         "runtime": {
           "ArchitectureLayer.dll": {}
@@ -262,7 +279,9 @@
       },
       "DomainLayer/1.0.0": {
         "dependencies": {
-          "HtmlAgilityPack": "1.11.61"
+          "HtmlAgilityPack": "1.11.61",
+          "NUnit": "4.1.0",
+          "NUnit3TestAdapter": "4.5.0"
         },
         "runtime": {
           "DomainLayer.dll": {}
@@ -401,6 +420,20 @@
       "sha512": "sha512-rURwggB+QZYcSVbDr7HSdhw/FELvMlriW10OeOzjPT7pstefMo7IThhtNtDudxbXhW+lj0NfX72Ka5EDsG8x6w==",
       "path": "microsoft.openapi/1.4.3",
       "hashPath": "microsoft.openapi.1.4.3.nupkg.sha512"
+    },
+    "NUnit/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MT/DpAhjtiytzhTgTqIhBuWx4y26PKfDepYUHUM+5uv4TsryHC2jwFo5e6NhWkApCm/G6kZ80dRjdJFuAxq3rg==",
+      "path": "nunit/4.1.0",
+      "hashPath": "nunit.4.1.0.nupkg.sha512"
+    },
+    "NUnit3TestAdapter/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s8JpqTe9bI2f49Pfr3dFRfoVSuFQyraTj68c3XXjIS/MRGvvkLnrg6RLqnTjdShX+AdFUCCU/4Xex58AdUfs6A==",
+      "path": "nunit3testadapter/4.5.0",
+      "hashPath": "nunit3testadapter.4.5.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.5.0": {
       "type": "package",

@@ -33,3 +33,9 @@ D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Deb
 D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\refint\ApplicationLayer.dll
 D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ApplicationLayer.pdb
 D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\obj\Debug\net7.0\ref\ApplicationLayer.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\NUnit3.TestAdapter.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\NUnit3.TestAdapter.pdb
+D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\nunit.engine.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\nunit.engine.api.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\nunit.engine.core.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\ApplicationLayer\bin\Debug\net7.0\testcentric.engine.metadata.dll

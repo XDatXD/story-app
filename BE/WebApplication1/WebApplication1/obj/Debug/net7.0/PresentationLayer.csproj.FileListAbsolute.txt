@@ -48,3 +48,11 @@ D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\obj\Debu
 D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\obj\Debug\net7.0\PresentationLayer.pdb
 D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\obj\Debug\net7.0\PresentationLayer.genruntimeconfig.cache
 D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\obj\Debug\net7.0\ref\PresentationLayer.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\bin\Debug\net7.0\nunit.framework.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\bin\Debug\net7.0\nunit.framework.legacy.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\bin\Debug\net7.0\NUnit3.TestAdapter.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\bin\Debug\net7.0\NUnit3.TestAdapter.pdb
+D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\bin\Debug\net7.0\nunit.engine.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\bin\Debug\net7.0\nunit.engine.api.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\bin\Debug\net7.0\nunit.engine.core.dll
+D:\Software_Design_Project\story-app\BE\WebApplication1\WebApplication1\bin\Debug\net7.0\testcentric.engine.metadata.dll

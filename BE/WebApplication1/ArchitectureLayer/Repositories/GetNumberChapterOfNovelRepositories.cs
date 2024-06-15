@@ -38,9 +38,17 @@ namespace ArchitectureLayer.Repositories
 				var htmlDocument = new HtmlDocument();
 				htmlDocument.LoadHtml(html);
 				List<string> listPages = _readDomGetTotalPageService.GetTotalPage(htmlDocument, href);
-				List<ContentChapter> list = await _readDomGetListChapterService.ReadDomGetListChapterAsync(listPages[listPages.Count-1]);
-
-				totalChapter += (listPages.Count - 1)*50 + list.Count;
+				if(listPages.Count > 0)
+				{
+					List<ContentChapter> list = await _readDomGetListChapterService.ReadDomGetListChapterAsync(listPages[listPages.Count-1]);
+					totalChapter += (listPages.Count - 1)*50 + list.Count;
+				}
+				else
+				{
+					List<ContentChapter> list = await _readDomGetListChapterService.
+						ReadDomGetListChapterAsync(href);
+					totalChapter = list.Count;
+				}
 			}
 			return totalChapter;
 		}

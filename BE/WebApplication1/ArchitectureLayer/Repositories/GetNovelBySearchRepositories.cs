@@ -116,17 +116,24 @@ namespace ArchitectureLayer.Repositories
 					var htmlDocument = new HtmlDocument();
 					htmlDocument.LoadHtml(html);
 					List<string> listPage = _readDomGetTotalPageService.GetTotalPageVersion1(htmlDocument, template);
-					foreach (var page in listPage)
+					if (listPage.Count == 0)
 					{
-						var request1 = new HttpRequestMessage(HttpMethod.Get, page);
-						var client1 = _httpClientFactory.CreateClient();
-						var response1 = await client1.SendAsync(request1);
-						if (response1.IsSuccessStatusCode)
+						result = await _readDomNovelListService.ReadDomNovelListVersion1(htmlDocument);
+					}
+					else
+					{
+						foreach (var page in listPage)
 						{
-							var html1 = await response.Content.ReadAsStringAsync();
-							var htmlDocument1 = new HtmlDocument();
-							htmlDocument1.LoadHtml(html1);
-							result.AddRange(await _readDomNovelListService.ReadDomNovelListVersion1(htmlDocument1));
+							var request1 = new HttpRequestMessage(HttpMethod.Get, page);
+							var client1 = _httpClientFactory.CreateClient();
+							var response1 = await client1.SendAsync(request1);
+							if (response1.IsSuccessStatusCode)
+							{
+								var html1 = await response.Content.ReadAsStringAsync();
+								var htmlDocument1 = new HtmlDocument();
+								htmlDocument1.LoadHtml(html1);
+								result.AddRange(await _readDomNovelListService.ReadDomNovelListVersion1(htmlDocument1));
+							}
 						}
 					}
 				}

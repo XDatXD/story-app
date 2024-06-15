@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iJIuxvHKawNNA11nBqRCVVL+DDiScc3KxB9M/r3gEiA1Nh6fYfsqjYAcnZcP+q3Z1qPGiWOxWzFrlHXrvJUWVQ==",
+  "dgSpecHash": "X8HDr51wwdr4+zTQq52481ofaOdZkusj4qQFiVs5oTkyZa+SCnpHyUX1bVSwj3TYMbymk430xTvnxbMoKpZ+Pg==",
   "success": true,
   "projectFilePath": "D:\\Software_Design_Project\\story-app\\BE\\WebApplication1\\WebApplication1\\PresentationLayer.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,8 @@
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0-preview.4.24266.19\\microsoft.extensions.primitives.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\nunit\\4.1.0\\nunit.4.1.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

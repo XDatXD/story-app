@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "X4OtQCxDys683prjye36kywyB/XwW3iJW/a0poLUp6ykUdwk0jUI0jdgJogByLcCYjaIi8KX035yY7hph4n6iA==",
+  "dgSpecHash": "gSe4uWbSbdoQGoNKiSNOGuFy5qJ34j5TtLBk8eAQXhJnmsLSdrFd8oW13Omhu4CQwT43JVWi697dbXs/1HLZYw==",
   "success": true,
   "projectFilePath": "D:\\Software_Design_Project\\story-app\\BE\\WebApplication1\\DomainLayer\\DomainLayer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dell\\.nuget\\packages\\htmlagilitypack\\1.11.61\\htmlagilitypack.1.11.61.nupkg.sha512"
+    "C:\\Users\\Dell\\.nuget\\packages\\htmlagilitypack\\1.11.61\\htmlagilitypack.1.11.61.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\nunit\\4.1.0\\nunit.4.1.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

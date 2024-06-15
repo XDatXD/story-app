@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lKaY3SkDirarjhirisxCFC463U0ZmR+axG9GPCPq+u7yUw1/0rR15dXXuVxuctI03jzSw/q6WQJHPgoN9Qv8UQ==",
+  "dgSpecHash": "b5l+AQm6v75wpK4Vum3q2YONqCZdS5dD3yzQkgoJVuS/ZHCKWkAOZe7aybFamHsTEvmklnBnLtbhp819+xVu+w==",
   "success": true,
   "projectFilePath": "D:\\Software_Design_Project\\story-app\\BE\\WebApplication1\\ApplicationLayer\\ApplicationLayer.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,8 @@
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0-preview.4.24266.19\\microsoft.extensions.logging.abstractions.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.options\\9.0.0-preview.4.24266.19\\microsoft.extensions.options.9.0.0-preview.4.24266.19.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0-preview.4.24266.19\\microsoft.extensions.primitives.9.0.0-preview.4.24266.19.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\nunit\\4.1.0\\nunit.4.1.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0-preview.4.24266.19\\system.diagnostics.diagnosticsource.9.0.0-preview.4.24266.19.nupkg.sha512",
