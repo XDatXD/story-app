@@ -15,18 +15,16 @@ namespace PresentationLayer.Controllers
 		private readonly IReadDomGetTotalPageService _readDomGetTotalPageService;
 		public GetNovelByNumberChapterController(IReadDomNovelListService readDomNovelListService
 			, IHttpClientFactory httpClientFactory,
-			IReadDomGetTotalPageService readDomGetTotalPageService
-			, GetNovelByNumberChapterRepositories getNovelByNumberChapterRepositories)
+			IReadDomGetTotalPageService readDomGetTotalPageService)
 		{
 			_readDomGetTotalPageService = readDomGetTotalPageService;
 			_readDomNovelListService = readDomNovelListService;
 			_httpClientFactory = httpClientFactory;
-			repository = getNovelByNumberChapterRepositories;
 		}
 		[HttpGet]
 		public async Task<IActionResult> Get([FromQuery] string href)
 		{
-			//repository = new GetNovelByNumberChapterRepositories(_readDomNovelListService, _httpClientFactory, _readDomGetTotalPageService);
+			repository = new GetNovelByNumberChapterRepositories(_readDomNovelListService, _httpClientFactory, _readDomGetTotalPageService);
 			Page page = await repository.GetNovel(href);
 			return Ok(page);
 		}
