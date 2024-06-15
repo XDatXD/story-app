@@ -2,6 +2,7 @@ import { Document, Packer, Paragraph, TextRun } from "docx";
 import { saveAs } from "file-saver";
 import { ChapterDetail } from "@/schema/ChapterDetail";
 import { Exporter } from "./Exporter";
+import { htmlToText } from "html-to-text";
 
 export class DocExporter implements Exporter {
     async export(novel: ChapterDetail[]) {
@@ -15,7 +16,7 @@ export class DocExporter implements Exporter {
                         new Paragraph({
                             children: [
                                 new TextRun({
-                                    text: novel[0].titleNovel,
+                                    text: novel[0]?.titleNovel || "Truyện full",
                                     bold: true,
                                     size: 48,
                                 }),
@@ -26,31 +27,36 @@ export class DocExporter implements Exporter {
                         }),
                         // Add each chapter's content
                         ...novel
-                            .map((chapter) => [
-                                new Paragraph({
-                                    children: [
-                                        new TextRun({
-                                            text: chapter.title,
-                                            bold: true,
-                                            size: 32,
+                            .map((chapter) => {
+                                if(chapter.content && chapter.title) {
+                                    return [
+                                        new Paragraph({
+                                            children: [
+                                                new TextRun({
+                                                    text: chapter.title,
+                                                    bold: true,
+                                                    size: 32,
+                                                }),
+                                            ],
+                                            spacing: {
+                                                after: 200,
+                                            },
                                         }),
-                                    ],
-                                    spacing: {
-                                        after: 200,
-                                    },
-                                }),
-                                new Paragraph({
-                                    children: [
-                                        new TextRun({
-                                            text: chapter.content,
-                                            size: 24,
+                                        new Paragraph({
+                                            children: [
+                                                new TextRun({
+                                                    text: htmlToText(chapter.content),
+                                                    size: 24,
+                                                }),
+                                            ],
+                                            spacing: {
+                                                after: 400,
+                                            },
                                         }),
-                                    ],
-                                    spacing: {
-                                        after: 400,
-                                    },
-                                }),
-                            ])
+                                    ]
+                                }
+                                return [];
+                            })
                             .flat(),
                     ],
                 },
@@ -64,6 +70,6 @@ export class DocExporter implements Exporter {
         const blob = new Blob([buffer], {
             type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         });
-        saveAs(blob, `${novel[0].titleNovel}.docx`);
+        saveAs(blob, `${novel[0]?.titleNovel || "Truyện full"}.docx`);
     }
 }
