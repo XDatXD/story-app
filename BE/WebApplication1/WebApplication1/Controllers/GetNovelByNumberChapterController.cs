@@ -7,13 +7,13 @@ namespace PresentationLayer.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]
-	public class GetNovelByGenreController : Controller
+	public class GetNovelByNumberChapterController : Controller
 	{
 		private IGetNovelByCriteriaRepositories repository;
 		private readonly IReadDomNovelListService _readDomNovelListService;
 		private readonly IHttpClientFactory _httpClientFactory;
 		private readonly IReadDomGetTotalPageService _readDomGetTotalPageService;
-		public GetNovelByGenreController(IReadDomNovelListService readDomNovelListService
+		public GetNovelByNumberChapterController(IReadDomNovelListService readDomNovelListService
 			, IHttpClientFactory httpClientFactory, IReadDomGetTotalPageService readDomGetTotalPageService)
 		{
 			_readDomGetTotalPageService = readDomGetTotalPageService;
@@ -21,11 +21,11 @@ namespace PresentationLayer.Controllers
 			_httpClientFactory = httpClientFactory;
 		}
 		[HttpGet]
-		public async Task<IActionResult> Get([FromQuery]string href)
+		public async Task<IActionResult> Get([FromQuery] string href)
 		{
-			repository = new GetNovelByGenreRepositories(_readDomNovelListService, _httpClientFactory, _readDomGetTotalPageService);
-			Page list = await repository.GetNovel(href);
-			return Ok(list);
+			repository = new GetNovelByNumberChapterRepositories(_readDomNovelListService, _httpClientFactory, _readDomGetTotalPageService);
+			Page page = await repository.GetNovel(href);
+			return Ok(page);
 		}
 	}
 }

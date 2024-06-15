@@ -1,15 +1,20 @@
 ﻿using DomainLayer.Entities;
 using DomainLayer.Interfaces;
 using HtmlAgilityPack;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace ArchitectureLayer.Repositories
 {
-	public class GetNovelByGenreRepositories : IGetNovelByCriteriaRepositories
+	public class GetNovelByNumberChapterRepositories : IGetNovelByCriteriaRepositories
 	{
 		private readonly IReadDomNovelListService _readDomNovelListService;
 		private readonly IHttpClientFactory _httpClientFactory;
 		private readonly IReadDomGetTotalPageService _readDomGetTotalPageService;
-
-		public GetNovelByGenreRepositories(IReadDomNovelListService readDomNovelListService
+		public GetNovelByNumberChapterRepositories(IReadDomNovelListService readDomNovelListService
 			, IHttpClientFactory httpClientFactory, IReadDomGetTotalPageService readDomGetTotalPageService)
 		{
 			_readDomNovelListService = readDomNovelListService;
@@ -21,7 +26,7 @@ namespace ArchitectureLayer.Repositories
 			var request = new HttpRequestMessage(HttpMethod.Get, href);
 			var client = _httpClientFactory.CreateClient();
 			var response = await client.SendAsync(request);
-			string templateString = "https://truyenfull.vn/the-loai/quan-truong/";
+			string templateString = "https://truyenfull.vn/top-truyen/500-1000-chuong/";
 			List<Novel> novels = new List<Novel>();
 			List<string> listString = new List<string>();
 			if (response.IsSuccessStatusCode)
