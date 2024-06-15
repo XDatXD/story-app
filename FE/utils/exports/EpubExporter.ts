@@ -2,11 +2,12 @@ import JSZip from "jszip";
 import { saveAs } from "file-saver";
 import { ChapterDetail } from "@/schema/ChapterDetail";
 import { Exporter } from "./Exporter";
+import { htmlToText } from "html-to-text";
 
 export class EpubExporter implements Exporter {
     async export(novel: ChapterDetail[]) {
         const zip = new JSZip();
-        const novelTitle = novel[0].titleNovel;
+        const novelTitle = novel[0]?.titleNovel || "Truyện full";
 
         // Create the mimetype file
         zip.file("mimetype", "application/epub+zip");
@@ -73,17 +74,19 @@ export class EpubExporter implements Exporter {
 
         // Create each chapter file
         novel.forEach((chapter, index) => {
-            const chapterContent = `<?xml version="1.0" encoding="UTF-8"?>
-            <html xmlns="http://www.w3.org/1999/xhtml">
-                <head>
-                    <title>${chapter.title}</title>
-                </head>
-                <body>
-                    <h1>${chapter.title}</h1>
-                    <p>${chapter.content}</p>
-                </body>
-            </html>`;
-            zip.folder("OEBPS")?.file(`chapter${index}.xhtml`, chapterContent);
+            if(chapter.title && chapter.content) {
+                const chapterContent = `<?xml version="1.0" encoding="UTF-8"?>
+                <html xmlns="http://www.w3.org/1999/xhtml">
+                    <head>
+                        <title>${chapter.title}</title>
+                    </head>
+                    <body>
+                        <h1>${chapter.title}</h1>
+                        <p>${htmlToText(chapter.content)}</p>
+                    </body>
+                </html>`;
+                zip.folder("OEBPS")?.file(`chapter${index}.xhtml`, chapterContent);
+            }
         });
 
         // Generate the zip file and save it as an EPUB
