@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace UnitTestWithNUnit
 {
-	
+	[TestFixture]
 	public class GetNumChapterUnitTesting
 	{
 		private IReadDomGetTotalPageService _readDomGetTotalPageService;
@@ -32,11 +32,11 @@ namespace UnitTestWithNUnit
 		}
 
 		[Test]
-		public async void Main_Test()
+		public async Task Main_Test()
 		{
 			int fact = await getNumberChapterOfNovelRepositories.
-				GetNumberChapterOfNovel("https://truyenfull.vn/am-quan-minh-the/");
-			Assert.That(fact, Is.EqualTo(20));
+				GetNumberChapterOfNovel("https://truyenfull.vn/tu-cam-270192/");
+			Assert.That(fact, Is.EqualTo(836));
 		}
 	}
 }
